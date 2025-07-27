@@ -4,6 +4,10 @@ loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 module.exports = defineConfig({
   projectConfig: {
+    databaseDriverOptions: {
+      ssl: false,
+      sslmode: "disable",
+    },
     databaseUrl: process.env.DATABASE_URL,
     redisUrl: process.env.REDIS_URL,
     http: {
